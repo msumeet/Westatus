@@ -25,3 +25,68 @@ a:hover,a:focus{text-decoration: none;color:#ddd;}
   background-color: #fcf8e3;
   border-color: #faebcc;
 }
+
+.postbg {
+	olor: #777;
+    background: #ffffff;
+    box-shadow: 0px 11px 0px -8px rgba(0, 0, 0, 0.12);
+    margin: 50px auto 0px auto;
+    position: relative;
+    width: 90%;
+    border: 1px solid #dfdfd3;
+    background-image: -webkit-radial-gradient(#fff 30%, transparent 20%),
+        -webkit-radial-gradient(#fff 38%, transparent 24%),
+        -webkit-linear-gradient(top, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) 95%,
+        hsla(0,0%,97%,1) 95%, hsla(0,0%,97%,1) 100%);
+    background-image: -moz-radial-gradient(#fff 30%, transparent 20%),
+        -moz-radial-gradient(#fff 38%, transparent 24%),
+        -moz-linear-gradient(top, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) 95%,
+        hsla(0,0%,97%,1) 95%, hsla(0,0%,97%,1) 100%);
+    background-image: radial-gradient(#fff 30%, transparent 20%),
+        radial-gradient(#fff 38%, transparent 24%),
+        linear-gradient(top, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) 95%,
+        hsla(0,0%,97%,1) 95%, hsla(0,0%,97%,1) 100%);
+    background-position: 4px 1px, 4px 0px, 50% 0px;
+    background-repeat: repeat-y,  repeat-y, repeat;
+    background-size: 30px 30px, 30px 30px, 30px 30px;
+    padding: 36px 20px 56px 60px;
+    line-height: 28px;
+    font-size: 17px;
+    font-family: Handlee;
+}
+
+.postbg:after {
+	border-left: 2px solid hsla(0,95%,50%,.1);
+    border-right: 2px solid hsla(0,95%,50%,.1);
+    bottom: 0;
+    content: '';
+    left: 40px;
+    position: absolute;
+    top: 0;
+    width: 3px;
+}
+
+#westatus-heading {
+	 color: #FFFFFF;
+    font-family: Handlee;
+    font-size: 2.7em;
+    text-align: center;
+    margin-top: 90px;
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.2);
+}
+.wecenter {
+	text-align: center
+}
+.wehi {
+	background: #FFFFCC;
+    padding: 2px 5px;
+}
+.wedate {
+	border-radius: 18px 0 0 18px;
+    line-height: 30px;
+    margin-right: -20px;
+    padding: 2px 18px 2px 10px;
+}
+.top-margin {
+	margin-top: 30px;
+}

@@ -1,6 +1,7 @@
 <%= form_for(@joke) do |f| %>
   <% if @joke.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <h2><%= pluralize(@joke.errors.count, "error") %> prohibited this joke from being saved:</h2>
 
       <ul>
