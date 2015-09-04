@@ -1,0 +1,21 @@
+<%= form_for(@fact) do |f| %>
+  <% if @fact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fact.errors.count, "error") %> prohibited this fact from being saved:</h2>
+
+      <ul>
+      <% @fact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :fact %><br>
+    <%= f.text_area :factfie, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit ("Submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>
