@@ -1,0 +1,35 @@
+<div class= "row">
+    <% @quotes.each do |quote| %>
+        <div class="col-md-12">
+           <div class="postbg">
+    
+              <%= quote.quotefie %>
+              <div class="wedate pull-right wehi">
+              <%= quote.created_at.strftime("%b %d, %Y") %>
+            </div>
+            <div class="clearfix"></div>
+              <em class="pull-right wehi" style="margin-top:20px;"> - <%= quote.author %></em>
+              <%= link_to 'Show', quote %>
+              <%= link_to 'Edit', edit_quote_path(quote) %>
+              <%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+         </div>
+      </div>
+    <% end %>  
+
+    <% @jokes.each do |joke| %>
+
+     <div class="col-md-12">
+           <div class="postbg">
+    
+              <%= joke.jokefie %>
+              <div class="wedate pull-right wehi">
+              <%= joke.created_at.strftime("%b %d, %Y") %>
+            </div>
+            <div class="clearfix"></div>
+              <%= link_to 'Show', joke %>
+              <%= link_to 'Edit', edit_joke_path(joke) %>
+              <%= link_to 'Destroy', joke, method: :delete, data: { confirm: 'Are you sure?' } %>
+         </div>
+      </div>
+    <% end %>
+</div>
