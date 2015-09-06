@@ -1,35 +1,50 @@
-<div class= "row">
-    <% @quotes.each do |quote| %>
-        <div class="col-md-12">
-           <div class="postbg">
+<% if @items.any? %>
     
-              <%= quote.quotefie %>
-              <div class="wedate pull-right wehi">
-              <%= quote.created_at.strftime("%b %d, %Y") %>
+    <div class="col-md-12">
+
+      <% @items.each do |item| %>
+
+      <% if item.is_a? Quote %>
+
+        <div class="postbg">
+            <%= item.quotefie %>
+            <div class="wedate pull-right wehi">
+              <%= item.created_at.strftime("%b %d, %Y") %>
             </div>
             <div class="clearfix"></div>
-              <em class="pull-right wehi" style="margin-top:20px;"> - <%= quote.author %></em>
-              <%= link_to 'Show', quote %>
-              <%= link_to 'Edit', edit_quote_path(quote) %>
-              <%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %>
-         </div>
-      </div>
-    <% end %>  
+            <em class="pull-right wehi"><%= item.author %></em>
+        </div>
 
-    <% @jokes.each do |joke| %>
+      <% elsif item.is_a? Joke %>
 
-     <div class="col-md-12">
-           <div class="postbg">
-    
-              <%= joke.jokefie %>
-              <div class="wedate pull-right wehi">
-              <%= joke.created_at.strftime("%b %d, %Y") %>
+          <div class="postbg">
+            <%= item.jokefie %>
+            <div class="wedate pull-right wehi">
+              <%= item.created_at.strftime("%b %d, %Y") %>
             </div>
-            <div class="clearfix"></div>
-              <%= link_to 'Show', joke %>
-              <%= link_to 'Edit', edit_joke_path(joke) %>
-              <%= link_to 'Destroy', joke, method: :delete, data: { confirm: 'Are you sure?' } %>
-         </div>
-      </div>
-    <% end %>
-</div>
+          </div>
+
+          <% elsif item.is_a? Image %>
+            <div class="postbg">
+              <%= item.title %>
+              <%= image_tag item.image.url(:medium) %>
+              <%= item.description %>
+              <div class="wedate pull-right wehi">
+              <%= item.created_at.strftime("%b %d, %Y") %>
+            </div>
+            </div>
+
+            <% else %>
+
+              <div class="postbg">
+                <%= item.factfie %>
+                <div class="wedate pull-right wehi">
+               <%= item.created_at.strftime("%b %d, %Y") %>
+            </div>
+              </div>
+      <% end %>
+      <% end %>
+
+    </div>
+
+<% end %>
