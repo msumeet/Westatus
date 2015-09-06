@@ -1,5 +1,7 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /quotes
   # GET /quotes.json
@@ -25,6 +27,7 @@ class QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
+    @quote.user_id = current_user.id
 
     respond_to do |format|
       if @quote.save
@@ -70,5 +73,11 @@ class QuotesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
       params.require(:quote).permit(:quotefie, :author)
+    end
+
+    def check_user
+      if current_user != @quote.user
+        redirect_to root_url, alert: "You do not have permission to do this action."
+      end
     end
 end

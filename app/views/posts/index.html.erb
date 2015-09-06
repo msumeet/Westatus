@@ -11,13 +11,14 @@
             <div class="wedate pull-right wehi">
               <%= item.created_at.strftime("%b %d, %Y") %>
             </div>
+            <%= link_to 'Show', item %>
             <div class="clearfix"></div>
             <em class="pull-right wehi"><%= item.author %></em>
         </div>
 
       <% elsif item.is_a? Joke %>
 
-          <div class="postbg">
+          <div class="postbg weitem joke">
             <%= item.jokefie %>
             <div class="wedate pull-right wehi">
               <%= item.created_at.strftime("%b %d, %Y") %>

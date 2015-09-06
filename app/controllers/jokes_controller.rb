@@ -1,5 +1,7 @@
 class JokesController < ApplicationController
   before_action :set_joke, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /jokes
   # GET /jokes.json
@@ -25,6 +27,7 @@ class JokesController < ApplicationController
   # POST /jokes.json
   def create
     @joke = Joke.new(joke_params)
+    @joke.user_id = current_user.id
 
     respond_to do |format|
       if @joke.save
@@ -70,5 +73,11 @@ class JokesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def joke_params
       params.require(:joke).permit(:jokefie)
+    end
+
+    def check_user
+      if current_user != @quote.user
+        redirect_to root_url, alert: "You do not have permission to do this action."
+      end
     end
 end

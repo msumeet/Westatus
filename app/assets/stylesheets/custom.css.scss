@@ -78,6 +78,29 @@ a:hover,a:focus{text-decoration: none;color:#ddd;}
     padding-top: 170px;
     text-shadow: 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+.weitem .wetype {
+    border-radius: 400px;
+    width: 50px;
+    height: 50px;
+    line-height: 55px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    background: #FA8455;
+    box-shadow: 2px 2px #db744b, 2px 2px #db744b inset, 0px 0px 0px 8px #e1eef6;
+    text-shadow: 1px 1px #db744b, 2px 2px #db744b, 3px 3px #db744b, 4px 4px #db744b, 5px 5px #db744b, 6px 6px #db744b, 7px 7px #db744b, 8px 8px #db744b, 9px 9px #db744b, 10px 10px #db744b;
+    position: absolute;
+    top:-15px;
+    right:-15px;
+}
+
+.weitem.joke .wetype {
+  background: #D45047;
+    box-shadow: 2px 2px #BA463D, 2px 2px #BA463D inset, 0px 0px 0px 8px #e1eef6;
+    text-shadow: 1px 1px #ba463d, 2px 2px #ba463d, 3px 3px #ba463d, 4px 4px #ba463d, 5px 5px #ba463d, 6px 6px #ba463d, 7px 7px #ba463d, 8px 8px #ba463d, 9px 9px #ba463d, 10px 10px #ba463d;
+}
+
 .wecenter {
 	text-align: center
 }

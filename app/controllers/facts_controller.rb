@@ -1,5 +1,7 @@
 class FactsController < ApplicationController
   before_action :set_fact, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /facts
   # GET /facts.json
@@ -25,6 +27,7 @@ class FactsController < ApplicationController
   # POST /facts.json
   def create
     @fact = Fact.new(fact_params)
+    @fact.user_id = current_user.id
 
     respond_to do |format|
       if @fact.save
@@ -70,5 +73,11 @@ class FactsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def fact_params
       params.require(:fact).permit(:factfie)
+    end
+
+    def check_user
+      if current_user != @quote.user
+        redirect_to root_url, alert: "You do not have permission to do this action."
+      end
     end
 end
