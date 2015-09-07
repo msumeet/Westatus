@@ -1,29 +1,26 @@
-<h1>Listing Images</h1>
+<div class= "row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Source</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @images.each do |image| %>
-      <tr>
-        <td><%= image.title %></td>
-        <td><%= image.description %></td>
-        <td><%= image.source %></td>
-        <td><%= link_to 'Show', image %></td>
-        <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Image', new_image_path %>
+        <div class="col-md-12">
+          <div class="postbg">
+              <div class="clearfix weuser-post">
+                <div class="weuser-avatar"><%= image_tag image.user.avatar.url(:thumb) %></div>
+                <div class="weuser-name"><%= image.user.name %></div>
+              </div>
+              <div class="weitem wetype image">
+                <span class="fa fa-picture-o weitem wetype"></span>
+              </div>
+              <div class="wedate pull-right wehi">
+                <%= image.created_at.strftime("%b %d, %Y") %>
+              </div>
+              <div class="clearfix"></div>
+              <h2 class="wecenter" style="margin:0;"><%= image.title %></h2>
+              <div class="clearfix"></div>
+                <div class="wecenter image-item-wrap" style="margin:15px;">
+                  <%= image_tag image.image.url(:medium) %>
+                </div>
+              <p><%= image.description %></p>
+            </div>
+      </div>
+    <% end %>   
+    </div>

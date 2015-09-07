@@ -1,25 +1,22 @@
-<h1>Listing Jokes</h1>
+<div class= "row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Jokefie</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @jokes.each do |joke| %>
-      <tr>
-        <td><%= joke.jokefie %></td>
-        <td><%= link_to 'Show', joke %></td>
-        <td><%= link_to 'Edit', edit_joke_path(joke) %></td>
-        <td><%= link_to 'Destroy', joke, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Joke', new_joke_path %>
+        <div class="col-md-12">
+         <div class="postbg">
+          <div class="clearfix weuser-post">
+            <div class="weuser-avatar"><%= image_tag joke.user.avatar.url(:thumb) %></div>
+            <div class="weuser-name"><%= joke.user.name %></div>
+          </div>
+              <div class="weitem wetype joke">
+                <span class="fa fa-smile-o weitem wetype"></span>
+              </div>
+            <div class="wedate pull-right wehi">
+              <%= joke.created_at.strftime("%b %d, %Y") %>
+            </div>
+             <div class="clearfix"></div>
+            <%= joke.jokefie %>
+            <%= link_to 'Show', joke %>
+        </div>
+      </div>
+    <% end %>   
+    </div>

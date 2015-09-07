@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body{
 background: url('/assets/bg.png') center #e1eef6 fixed;
@@ -95,10 +96,42 @@ a:hover,a:focus{text-decoration: none;color:#ddd;}
     right:-15px;
 }
 
+.item-image {
+    max-width: 100%;
+}
+
 .weitem.joke .wetype {
-  background: #D45047;
+    background: #D45047;
     box-shadow: 2px 2px #BA463D, 2px 2px #BA463D inset, 0px 0px 0px 8px #e1eef6;
     text-shadow: 1px 1px #ba463d, 2px 2px #ba463d, 3px 3px #ba463d, 4px 4px #ba463d, 5px 5px #ba463d, 6px 6px #ba463d, 7px 7px #ba463d, 8px 8px #ba463d, 9px 9px #ba463d, 10px 10px #ba463d;
+}
+
+.weitem.image .wetype {
+    background: #BD6777;
+    box-shadow: 2px 2px #a65a67, 2px 2px #a65a67 inset, 0px 0px 0px 8px #e1eef6;
+    text-shadow: 1px 1px #a65a67, 2px 2px #a65a67, 3px 3px #a65a67, 4px 4px #a65a67, 5px 5px #a65a67, 6px 6px #a65a67, 7px 7px #a65a67, 8px 8px #a65a67, 9px 9px #a65a67, 10px 10px #a65a67;
+}
+
+.weitem.fact .wetype {
+    background: #A2BF59;
+    box-shadow: 2px 2px #91ab50, 2px 2px #91ab50 inset, 0px 0px 0px 8px #e1eef6;
+    text-shadow: 1px 1px #91ab50, 2px 2px #91ab50, 3px 3px #91ab50, 4px 4px #91ab50, 5px 5px #91ab50, 6px 6px #91ab50, 7px 7px #91ab50, 8px 8px #91ab50, 9px 9px #91ab50, 10px 10px #91ab50;
+}
+
+.label-primary {
+    background: #FA8455;  
+}
+
+.label-info {
+  background: #BD6777;
+}
+
+.label-default {
+  background: #D45047;
+}
+
+.label-danger {
+  background: #A2BF59;
 }
 
 .wecenter {
@@ -109,7 +142,7 @@ a:hover,a:focus{text-decoration: none;color:#ddd;}
     padding: 2px 5px;
 }
 .wedate {
-	border-radius: 18px 0 0 18px;
+	 border-radius: 18px 0 0 18px;
     line-height: 30px;
     margin-right: -20px;
     padding: 2px 18px 2px 10px;
@@ -297,4 +330,43 @@ input {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.weuser-avatar {
+    width: 50px;
+    height: 50px;
+    float: left;
+    border: 2px solid #999;
+    border-radius: 100px;
+    overflow: hidden;
+    display: block;
+    line-height: 28px;
+    position: relative;
+    z-index: 110;
+    background: #fff;
+}
+
+.weuser-post {
+    left: -20px;
+    position: absolute;
+    top: -12px;
+}
+.weuser-avatar img {
+  max-width: 100%;
+}
+
+.weuser-name {
+    float: left;
+    padding: 0px 13px;
+    background: #999;
+    margin-top: 12px;
+    margin-left: -10px;
+    color: #fff;
+    position: relative;
+    z-index: 100;
+    border-radius: 0 0 13px;
+}
+
+.inline {
+  display: inline-block;
 }

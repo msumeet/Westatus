@@ -7,41 +7,76 @@
       <% if item.is_a? Quote %>
 
         <div class="postbg">
-            <%= item.quotefie %>
+          <div class="clearfix weuser-post">
+            <div class="weuser-avatar"><%= image_tag item.user.avatar.url(:thumb) %></div>
+            <div class="weuser-name"><%= item.user.name %></div>
+          </div>
+              <div class="weitem wetype">
+                <span class="fa fa-bullhorn weitem wetype"></span>
+              </div>
             <div class="wedate pull-right wehi">
               <%= item.created_at.strftime("%b %d, %Y") %>
             </div>
+             <div class="clearfix"></div>
+            <%= item.quotefie %>
             <%= link_to 'Show', item %>
             <div class="clearfix"></div>
-            <em class="pull-right wehi"><%= item.author %></em>
+            <em class="pull-right wehi"><%= " - #{item.author}" %></em>
         </div>
 
       <% elsif item.is_a? Joke %>
 
-          <div class="postbg weitem joke">
-            <%= item.jokefie %>
-            <div class="wedate pull-right wehi">
+          <div class="postbg">
+            <div class="clearfix weuser-post">
+              <div class="weuser-avatar"><%= image_tag item.user.avatar.url(:thumb) %></div>
+              <div class="weuser-name"><%= item.user.name %></div>
+           </div>
+           <div class="weitem wetype joke">
+                <span class="fa fa-smile-o weitem wetype"></span>
+              </div>
+           <div class="wedate pull-right wehi">
               <%= item.created_at.strftime("%b %d, %Y") %>
             </div>
+           <div class="clearfix"></div>
+            <%= item.jokefie %>
           </div>
 
           <% elsif item.is_a? Image %>
             <div class="postbg">
-              <%= item.title %>
-              <%= image_tag item.image.url(:medium) %>
-              <%= item.description %>
+              <div class="clearfix weuser-post">
+                <div class="weuser-avatar"><%= image_tag item.user.avatar.url(:thumb) %></div>
+                <div class="weuser-name"><%= item.user.name %></div>
+              </div>
+              <div class="weitem wetype image">
+                <span class="fa fa-picture-o weitem wetype"></span>
+              </div>
               <div class="wedate pull-right wehi">
-              <%= item.created_at.strftime("%b %d, %Y") %>
-            </div>
+                <%= item.created_at.strftime("%b %d, %Y") %>
+              </div>
+              <div class="clearfix"></div>
+              <h2 class="wecenter" style="margin:0;"><%= item.title %></h2>
+              <div class="clearfix"></div>
+                <div class="wecenter image-item-wrap" style="margin:15px;">
+                  <%= image_tag item.image.url(:medium) %>
+                </div>
+              <p><%= item.description %></p>
             </div>
 
             <% else %>
 
               <div class="postbg">
-                <%= item.factfie %>
+                <div class="clearfix weuser-post">
+                  <div class="weuser-avatar"><%= image_tag item.user.avatar.url(:thumb) %></div>
+                  <div class="weuser-name"><%= item.user.name %></div>
+              </div>
+               <div class="weitem wetype fact">
+                <span class="fa fa-lightbulb-o weitem wetype"></span>
+              </div>
                 <div class="wedate pull-right wehi">
-               <%= item.created_at.strftime("%b %d, %Y") %>
-            </div>
+                  <%= item.created_at.strftime("%b %d, %Y") %>
+                </div>
+                <div class="clearfix"></div>
+                <%= item.factfie %>
               </div>
       <% end %>
       <% end %>

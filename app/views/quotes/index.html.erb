@@ -2,22 +2,23 @@
 
     <% @quotes.each do |quote| %>
         <div class="col-md-12">
-           <div class="postbg">
-    
-              <%= quote.quotefie %>
-              <div class="wedate pull-right wehi">
+         <div class="postbg">
+          <div class="clearfix weuser-post">
+            <div class="weuser-avatar"><%= image_tag quote.user.avatar.url(:thumb) %></div>
+            <div class="weuser-name"><%= quote.user.name %></div>
+          </div>
+              <div class="weitem wetype">
+                <span class="fa fa-bullhorn weitem wetype"></span>
+              </div>
+            <div class="wedate pull-right wehi">
               <%= quote.created_at.strftime("%b %d, %Y") %>
             </div>
+             <div class="clearfix"></div>
+            <%= quote.quotefie %>
+            <%= link_to 'Show', quote %>
             <div class="clearfix"></div>
-              <em class="pull-right wehi" style="margin-top:20px;"> - <%= quote.author %></em>
-              <%= link_to 'Show', quote %>
-              <%= link_to 'Edit', edit_quote_path(quote) %>
-              <%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %>
-         </div>
+            <em class="pull-right wehi"><%= " - #{quote.author}" %></em>
+        </div>
       </div>
     <% end %>   
     </div>
-  
-<br>
-
-<%= link_to 'New Quote', new_quote_path %>
