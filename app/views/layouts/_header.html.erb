@@ -18,6 +18,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-upload icon-white"></i> Submit</a>
         <ul class="dropdown-menu">
           <li><%= link_to "Quote", new_quote_path %></li>
+          <li><%= link_to "Status", new_status_path %></li>
           <li><%= link_to "Image", new_image_path %></li>
           <li><%= link_to "Joke", new_joke_path %></li>
           <li><%= link_to "Fact", new_fact_path %></li>
@@ -36,7 +37,7 @@
 </nav>
 <% if current_page?(root_path) %>
 <div id="header">
-  <h1 id="westatus-heading">WeStatus - Whatsapp Status & Funny Images</h1>
+  <h1 id="westatus-heading">WeStatus - Share The Fun.</h1>
     <div class="wecenter">
       <h3 class="inline"><%= link_to "Quotes", quotes_path, class: "label label-primary" %></h3>
       <h3 class="inline"><%= link_to "Statuses", statuses_path, class: "label label-warning" %></h3>
