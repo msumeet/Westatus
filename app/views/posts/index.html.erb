@@ -15,7 +15,7 @@
                 <span class="fa fa-bullhorn weitem wetype"></span>
               </div>
             <div class="wedate pull-right wehi">
-              <%= item.created_at.strftime("%b %d, %Y") %>
+              <%= timeago_tag item.created_at, :nojs => true, :limit => 30.days.ago %>
             </div>
              <div class="clearfix"></div>
             <%= item.quotefie %>
@@ -35,7 +35,7 @@
                 <span class="fa fa-smile-o weitem wetype"></span>
               </div>
            <div class="wedate pull-right wehi">
-              <%= item.created_at.strftime("%b %d, %Y") %>
+              <%= timeago_tag item.created_at, :nojs => true, :limit => 30.days.ago %>
             </div>
            <div class="clearfix"></div>
             <%= item.jokefie %>
@@ -51,7 +51,7 @@
                 <span class="fa fa-picture-o weitem wetype"></span>
               </div>
               <div class="wedate pull-right wehi">
-                <%= item.created_at.strftime("%b %d, %Y") %>
+                <%= timeago_tag item.created_at, :nojs => true, :limit => 30.days.ago %>
               </div>
               <div class="clearfix"></div>
               <h2 class="wecenter" style="margin:0;"><%= item.title %></h2>
@@ -73,7 +73,7 @@
                 <span class="fa fa-lightbulb-o weitem wetype"></span>
               </div>
                 <div class="wedate pull-right wehi">
-                  <%= item.created_at.strftime("%b %d, %Y") %>
+                  <%= timeago_tag item.created_at, :nojs => true, :limit => 30.days.ago %>
                 </div>
                 <div class="clearfix"></div>
                 <%= item.factfie %>
@@ -90,7 +90,7 @@
                       <span class="fa fa-whatsapp weitem wetype"></span>
                     </div>
                   <div class="wedate pull-right wehi">
-                    <%= item.created_at.strftime("%b %d, %Y") %>
+                    <%= timeago_tag item.created_at, :nojs => true, :limit => 30.days.ago %>
                   </div>
                    <div class="clearfix"></div>
                   <%= item.statusfie %>

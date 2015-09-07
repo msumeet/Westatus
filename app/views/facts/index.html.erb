@@ -11,7 +11,7 @@
                 <span class="fa fa-lightbulb-o weitem wetype"></span>
               </div>
            <div class="wedate pull-right wehi">
-              <%= fact.created_at.strftime("%b %d, %Y") %>
+              <%= timeago_tag fact.created_at, :nojs => true, :limit => 30.days.ago %>
             </div>
            <div class="clearfix"></div>
             <%= fact.factfie %>

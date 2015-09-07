@@ -11,7 +11,7 @@
                 <span class="fa fa-whatsapp weitem wetype"></span>
               </div>
             <div class="wedate pull-right wehi">
-              <%= status.created_at.strftime("%b %d, %Y") %>
+              <%= timeago_tag status.created_at, :nojs => true, :limit => 30.days.ago %>
             </div>
              <div class="clearfix"></div>
             <%= status.statusfie %>

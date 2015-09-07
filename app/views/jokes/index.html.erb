@@ -11,7 +11,7 @@
                 <span class="fa fa-smile-o weitem wetype"></span>
               </div>
             <div class="wedate pull-right wehi">
-              <%= joke.created_at.strftime("%b %d, %Y") %>
+              <%= timeago_tag joke.created_at, :nojs => true, :limit => 30.days.ago %>
             </div>
              <div class="clearfix"></div>
             <%= joke.jokefie %>

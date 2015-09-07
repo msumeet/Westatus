@@ -11,7 +11,7 @@
                 <span class="fa fa-picture-o weitem wetype"></span>
               </div>
               <div class="wedate pull-right wehi">
-                <%= image.created_at.strftime("%b %d, %Y") %>
+                <%= timeago_tag image.created_at, :nojs => true, :limit => 30.days.ago %>
               </div>
               <div class="clearfix"></div>
               <h2 class="wecenter" style="margin:0;"><%= image.title %></h2>
