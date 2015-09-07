@@ -62,7 +62,7 @@
               <p><%= item.description %></p>
             </div>
 
-            <% else %>
+            <% elsif item.is_a? Fact %>
 
               <div class="postbg">
                 <div class="clearfix weuser-post">
@@ -77,6 +77,23 @@
                 </div>
                 <div class="clearfix"></div>
                 <%= item.factfie %>
+              </div>
+
+              <% else %>
+
+                <div class="postbg">
+                <div class="clearfix weuser-post">
+                  <div class="weuser-avatar"><%= image_tag item.user.avatar.url(:thumb) %></div>
+                  <div class="weuser-name"><%= item.user.name %></div>
+                </div>
+                    <div class="weitem wetype status">
+                      <span class="fa fa-whatsapp weitem wetype"></span>
+                    </div>
+                  <div class="wedate pull-right wehi">
+                    <%= item.created_at.strftime("%b %d, %Y") %>
+                  </div>
+                   <div class="clearfix"></div>
+                  <%= item.statusfie %>
               </div>
       <% end %>
       <% end %>

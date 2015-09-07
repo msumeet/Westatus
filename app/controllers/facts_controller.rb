@@ -76,7 +76,7 @@ class FactsController < ApplicationController
     end
 
     def check_user
-      if current_user != @quote.user
+      unless (@fact.user == current_user) || (current_user.admin?)
         redirect_to root_url, alert: "You do not have permission to do this action."
       end
     end

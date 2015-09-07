@@ -18,6 +18,15 @@
             <%= link_to 'Show', quote %>
             <div class="clearfix"></div>
             <em class="pull-right wehi"><%= " - #{quote.author}" %></em>
+            <div class="clearfix"></div>
+            <% if user_signed_in? %>
+              <%  if (quote.user == current_user) || (current_user.admin?) %>
+                  <div class="post-footer">
+                    <%= link_to "Edit", edit_quote_path(quote.id) %>
+                    <%= link_to "Delete", quote_path(quote.id), method: :delete %>
+                  </div>
+                <% end %>
+              <% end %>
         </div>
       </div>
     <% end %>   

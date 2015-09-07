@@ -15,6 +15,14 @@
             </div>
            <div class="clearfix"></div>
             <%= fact.factfie %>
+            <% if user_signed_in? %>
+              <%  if (fact.user == current_user) || (current_user.admin?) %>
+                  <div class="post-footer">
+                    <%= link_to "Edit", edit_fact_path(fact.id) %>
+                    <%= link_to "Delete", fact_path(fact.id), method: :delete %>
+                  </div>
+                <% end %>
+              <% end %>
           </div>
       </div>
     <% end %>   

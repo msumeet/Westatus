@@ -20,6 +20,14 @@
                   <%= image_tag image.image.url(:medium) %>
                 </div>
               <p><%= image.description %></p>
+              <% if user_signed_in? %>
+              <%  if (image.user == current_user) || (current_user.admin?) %>
+                  <div class="post-footer">
+                    <%= link_to "Edit", edit_image_path(image.id) %>
+                    <%= link_to "Delete", image_path(image.id), method: :delete %>
+                  </div>
+                <% end %>
+              <% end %>
             </div>
       </div>
     <% end %>   

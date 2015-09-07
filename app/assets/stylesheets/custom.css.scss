@@ -71,6 +71,17 @@ a:hover,a:focus{text-decoration: none;color:#ddd;}
     width: 3px;
 }
 
+.post-footer {
+  background: #f5f8fa;
+    bottom: 0;
+    left: 0;
+    padding: 6px 10px 6px 60px;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    height: 45px;
+}
+
 #westatus-heading {
 	 color: #FFFFFF;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -118,6 +129,12 @@ a:hover,a:focus{text-decoration: none;color:#ddd;}
     text-shadow: 1px 1px #91ab50, 2px 2px #91ab50, 3px 3px #91ab50, 4px 4px #91ab50, 5px 5px #91ab50, 6px 6px #91ab50, 7px 7px #91ab50, 8px 8px #91ab50, 9px 9px #91ab50, 10px 10px #91ab50;
 }
 
+.weitem.status .wetype {
+    background: #2499DA;
+    box-shadow: 2px 2px #1e7db0, 2px 2px #1e7db0 inset, 0px 0px 0px 8px #e1eef6;
+    text-shadow: 1px 1px #1e7db0, 2px 2px #1e7db0, 3px 3px #1e7db0, 4px 4px #1e7db0, 5px 5px #1e7db0, 6px 6px #1e7db0, 7px 7px #1e7db0, 8px 8px #1e7db0, 9px 9px #1e7db0, 10px 10px #1e7db0; 
+}
+
 .label-primary {
     background: #FA8455;  
 }
@@ -132,6 +149,10 @@ a:hover,a:focus{text-decoration: none;color:#ddd;}
 
 .label-danger {
   background: #A2BF59;
+}
+
+.label-warning {
+  background: #25a417;
 }
 
 .wecenter {

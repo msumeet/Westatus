@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  resources :statuses
   devise_for :users
   resources :users
   resources :images
   resources :facts
   resources :jokes
-  resources :quotes
+
+  resources :quotes do
+    resources :reviews, except: [:show, :index]
+  end
+
   get  "about" => 'pages#about'
 
   get "contact" => 'pages#contact'

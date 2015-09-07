@@ -15,7 +15,14 @@
             </div>
              <div class="clearfix"></div>
             <%= joke.jokefie %>
-            <%= link_to 'Show', joke %>
+            <% if user_signed_in? %>
+              <%  if (joke.user == current_user) || (current_user.admin?) %>
+                  <div class="post-footer">
+                    <%= link_to "Edit", edit_joke_path(joke.id) %>
+                    <%= link_to "Delete", joke_path(joke.id), method: :delete %>
+                  </div>
+                <% end %>
+              <% end %>
         </div>
       </div>
     <% end %>   
