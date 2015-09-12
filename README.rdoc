@@ -2,4 +2,4 @@
 
 Westatus is a place where people can sign up and share Quotes, Jokes, Facts, Statuses & Funny Images. 
 
-Live Demo - westatus.herokuapp.com
+Live Demo - http://westatus.herokuapp.com
